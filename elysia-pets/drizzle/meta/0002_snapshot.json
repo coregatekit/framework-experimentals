@@ -1,0 +1,112 @@
+{
+  "id": "d0b50655-3c0c-49e7-abac-832131cfcc39",
+  "prevId": "40556dde-33a1-4e27-9537-0dc7ca18aa4d",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "elysia-pets.animals": {
+      "name": "animals",
+      "schema": "elysia-pets",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "animal_type",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "elysia-pets.breeds": {
+      "name": "breeds",
+      "schema": "elysia-pets",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "animal_id": {
+          "name": "animal_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "breeds_animal_id_animals_id_fk": {
+          "name": "breeds_animal_id_animals_id_fk",
+          "tableFrom": "breeds",
+          "tableTo": "animals",
+          "schemaTo": "elysia-pets",
+          "columnsFrom": [
+            "animal_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {
+    "public.animal_type": {
+      "name": "animal_type",
+      "schema": "public",
+      "values": [
+        "Mammals",
+        "Birds",
+        "Reptiles",
+        "Amphibians",
+        "Invertebrates",
+        "Fish"
+      ]
+    }
+  },
+  "schemas": {
+    "elysia-pets": "elysia-pets"
+  },
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
