@@ -7,7 +7,7 @@ import { owners } from "./owners";
 export const PetGenderEnum = pgEnum("pet_gender", ["Male", "Female"]);
 
 export const pets = elysiaSchema.table("pets", {
-  id: uuid().primaryKey(),
+  id: uuid().primaryKey().defaultRandom(),
   pet_code: varchar({ length: 50 }).unique().notNull(),
   name: varchar({ length: 100 }).notNull(),
   breed_id: uuid()

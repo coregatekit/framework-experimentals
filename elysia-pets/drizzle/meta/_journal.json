@@ -43,6 +43,13 @@
       "when": 1739869157725,
       "tag": "0005_magenta_epoch",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1739872861525,
+      "tag": "0006_curly_cobalt_man",
+      "breakpoints": true
     }
   ]
 }

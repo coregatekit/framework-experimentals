@@ -4,7 +4,7 @@ import { relations } from "drizzle-orm";
 import { animals } from "./animals";
 
 export const breeds = elysiaSchema.table("breeds", {
-  id: uuid().primaryKey(),
+  id: uuid().primaryKey().defaultRandom(),
   name: varchar().notNull(),
   animal_id: uuid()
     .references(() => animals.id, { onDelete: "set null" })

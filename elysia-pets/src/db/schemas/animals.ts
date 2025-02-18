@@ -11,7 +11,7 @@ export const animalTypeEnum = pgEnum("animal_type", [
 ]);
 
 export const animals = elysiaSchema.table("animals", {
-  id: uuid().primaryKey(),
+  id: uuid().primaryKey().defaultRandom(),
   name: varchar({ length: 100 }).notNull(),
   type: animalTypeEnum().notNull(),
   ...timestamps
