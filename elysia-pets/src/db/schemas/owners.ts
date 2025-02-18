@@ -1,4 +1,4 @@
-import { elysiaSchema } from "./elysia-schema";
+import { elysiaSchema, timestamps } from "./elysia-schema";
 import { uuid, varchar } from "drizzle-orm/pg-core";
 
 export const owners = elysiaSchema.table("owners", {
@@ -7,4 +7,5 @@ export const owners = elysiaSchema.table("owners", {
   name: varchar({ length: 100 }).notNull(),
   email: varchar({ length: 100 }),
   phone_number: varchar({ length: 10 }).notNull(),
+  ...timestamps,
 });

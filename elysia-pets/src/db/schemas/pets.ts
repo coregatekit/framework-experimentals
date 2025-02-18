@@ -1,5 +1,5 @@
 import { relations } from "drizzle-orm";
-import { elysiaSchema } from "./elysia-schema";
+import { elysiaSchema, timestamps } from "./elysia-schema";
 import { pgEnum, uuid, varchar } from "drizzle-orm/pg-core";
 import { breeds } from "./breeds";
 import { owners } from "./owners";
@@ -20,6 +20,7 @@ export const pets = elysiaSchema.table("pets", {
   color: varchar({ length: 50 }),
   weight: varchar({ length: 10 }),
   height: varchar({ length: 10 }),
+  ...timestamps,
 });
 
 export const petsRelations = relations(pets, ({ one }) => ({
