@@ -1051,6 +1051,29 @@ logs
 
 # SvelteKit build / generate output
 .svelte-kit
+node_modules
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
