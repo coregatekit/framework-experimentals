@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres
+    container_name: framework_experimental_db
+    environment:
+      POSTGRES_USER: antman
+      POSTGRES_PASSWORD: sup3rs3cr3t
+      POSTGRES_DB: framework_experimental
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
