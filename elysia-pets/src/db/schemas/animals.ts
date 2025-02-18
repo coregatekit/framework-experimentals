@@ -1,4 +1,5 @@
-import { pgEnum, pgTable, uuid, varchar } from "drizzle-orm/pg-core";
+import { elysiaSchema } from "./elysia-schema";
+import { pgEnum, uuid, varchar } from "drizzle-orm/pg-core";
 
 export const animalTypeEnum = pgEnum("animal_type", [
   "Mammals",
@@ -9,7 +10,7 @@ export const animalTypeEnum = pgEnum("animal_type", [
   "Fish",
 ]);
 
-export const animals = pgTable("animals", {
+export const animals = elysiaSchema.table("animals", {
   id: uuid().primaryKey(),
   name: varchar({ length: 100 }).notNull(),
   type: animalTypeEnum().notNull(),
