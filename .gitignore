@@ -1302,3 +1302,6 @@ rust-project.json
 
 
 # End of https://www.toptal.com/developers/gitignore/api/go,rust,rust-analyzer,python,node,java,csharp,dotnetcore,django,rails,ruby,jetbrains,deno,astro,aspnetcore,data,database
+
+# Docker volumes
+/data
